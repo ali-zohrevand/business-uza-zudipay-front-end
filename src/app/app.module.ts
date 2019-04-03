@@ -6,6 +6,9 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './header/menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { SearchTopComponent } from './search-top/search-top.component';
+import { SlideArticleComponent } from './slide-article/slide-article.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +16,10 @@ import { FooterComponent } from './footer/footer.component';
     MainPageComponent,
     HeaderComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    SearchTopComponent,
+    SlideArticleComponent,
+    NewsletterComponent
   ],
   imports: [
     BrowserModule
