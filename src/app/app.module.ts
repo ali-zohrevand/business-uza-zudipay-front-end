@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './ar/main-page/main-page.component';
-import { HeaderComponent } from './header/header.component';
-import { MenuComponent } from './header/menu/menu.component';
-import { FooterComponent } from './footer/footer.component';
-import { SearchTopComponent } from './search-top/search-top.component';
-import { SlideArticleComponent } from './slide-article/slide-article.component';
-import { NewsletterComponent } from './newsletter/newsletter.component';
+import { HeaderComponent } from './ar/header/header.component';
+import { MenuComponent } from './ar/header/menu/menu.component';
+import { FooterComponent } from './ar/footer/footer.component';
+import { SearchTopComponent } from './ar/search-top/search-top.component';
+import { SlideArticleComponent } from './ar/slide-article/slide-article.component';
+import { NewsletterComponent } from './ar/newsletter/newsletter.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
@@ -21,7 +21,7 @@ import {
   MatTableModule
 } from '@angular/material';
 import {AppRoutes} from './app-routes';
-import { LoginComponentComponent } from './login-component/login-component.component';
+import { LoginComponentComponent } from './ar/login-component/login-component.component';
 import { ArabicMainComponent } from './ar/arabic-main/arabic-main.component';
 @NgModule({
   declarations: [
