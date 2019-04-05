@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { MainPageComponent } from './ar/main-page/main-page.component';
 import { HeaderComponent } from './ar/header/header.component';
 import { MenuComponent } from './ar/header/menu/menu.component';
 import { FooterComponent } from './ar/footer/footer.component';
@@ -23,10 +22,12 @@ import {
 import {AppRoutes} from './app-routes';
 import { LoginComponentComponent } from './ar/login-component/login-component.component';
 import { ArabicMainComponent } from './ar/arabic-main/arabic-main.component';
+import { ContactUsComponent } from './ar/pages/contact-us/contact-us.component';
+import { IndexPageComponent } from './ar/pages/index-page/index-page.component';
+import { AboutUsComponent } from './ar/pages/about-us/about-us.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponent,
     HeaderComponent,
     MenuComponent,
     FooterComponent,
@@ -34,7 +35,10 @@ import { ArabicMainComponent } from './ar/arabic-main/arabic-main.component';
     SlideArticleComponent,
     NewsletterComponent,
     LoginComponentComponent,
-    ArabicMainComponent
+    ArabicMainComponent,
+    ContactUsComponent,
+    IndexPageComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
