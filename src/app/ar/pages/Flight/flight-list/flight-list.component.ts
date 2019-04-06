@@ -1,10 +1,10 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
-import {Observable} from "rxjs";
-import {Flight} from "../../../../models/Flight/flight";
-import {Data} from "@angular/router";
-import {Country} from "../../../../models/Country/city";
-import {FormControl} from "@angular/forms";
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import {Observable} from 'rxjs';
+import {Flight} from '../../../../models/Flight/flight';
+import {Data} from '@angular/router';
+import {Country} from '../../../../models/Country/city';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-flight-list',
@@ -26,13 +26,13 @@ export class FlightListComponent implements OnInit {
 
   ngOnInit() {
     this.countries = [
-      {name: 'iran',  viewValue: 'ایران',cities:[{name: 'tehran', viewValue: 'تهران'} , {name: 'mashhad' ,viewValue: 'مشهد'}]},
-      {name: 'iraq', viewValue: 'عراق', cities:[{name: 'baqdad' , viewValue: 'بغداد'} , {name: 'arbil' ,viewValue: 'اربیل'}]},
+      {name: 'iran',  viewValue: 'ایران', cities: [{name: 'tehran', viewValue: 'تهران'} , {name: 'mashhad' , viewValue: 'مشهد'}]},
+      {name: 'iraq', viewValue: 'عراق', cities: [{name: 'baqdad' , viewValue: 'بغداد'} , {name: 'arbil' , viewValue: 'اربیل'}]},
 
     ];
 
     this.flights = [];
-    var f1 :Flight;
+    let f1: Flight;
     f1 = new Flight();
     f1.Source = 'tehran';
     f1.Destination = 'mashhad';
