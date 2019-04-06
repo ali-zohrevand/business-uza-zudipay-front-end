@@ -12,9 +12,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {
-  MatFormFieldModule, MatInputModule,
+  MatDatepickerModule,
+  MatFormFieldModule, MatInputModule, MatNativeDateModule,
   MatPaginator,
-  MatPaginatorModule,
+  MatPaginatorModule, MatSelectModule,
   MatSort, MatSortModule,
   MatTableDataSource,
   MatTableModule
@@ -25,6 +26,14 @@ import { ArabicMainComponent } from './ar/arabic-main/arabic-main.component';
 import { ContactUsComponent } from './ar/pages/contact-us/contact-us.component';
 import { IndexPageComponent } from './ar/pages/index-page/index-page.component';
 import { AboutUsComponent } from './ar/pages/about-us/about-us.component';
+import { FlightListComponent } from './ar/pages/Flight/flight-list/flight-list.component';
+import { TrainListComponent } from './ar/pages/Train/train-list/train-list.component';
+import { TrainRequestComponent } from './ar/pages/Train/train-request/train-request.component';
+import { FlightRouteComponent } from './ar/pages/Flight/flight-route/flight-route.component';
+import { TrainRouteComponent } from './ar/pages/Train/train-route/train-route.component';
+import { ExhangeRouteComponent } from './ar/pages/Exhange/exhange-route/exhange-route.component';
+import { ExchangeListComponent } from './ar/pages/Exhange/exhnage-list/exchange-list.component';
+import { ExhangeRequestComponent } from './ar/pages/Exhange/exhange-request/exhange-request.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +47,15 @@ import { AboutUsComponent } from './ar/pages/about-us/about-us.component';
     ArabicMainComponent,
     ContactUsComponent,
     IndexPageComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    FlightListComponent,
+    TrainListComponent,
+    TrainRequestComponent,
+    FlightRouteComponent,
+    TrainRouteComponent,
+    ExhangeRouteComponent,
+    ExchangeListComponent,
+    ExhangeRequestComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +64,9 @@ import { AboutUsComponent } from './ar/pages/about-us/about-us.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatTableModule,
+    MatSelectModule,
+    MatDatepickerModule,        // <----- import(must)
+    MatNativeDateModule,        // <----- import for date formating(optional)
     MatPaginatorModule,
     MatSortModule,
     AppRoutes,
