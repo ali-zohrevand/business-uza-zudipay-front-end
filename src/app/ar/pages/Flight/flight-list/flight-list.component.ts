@@ -13,9 +13,8 @@ import {FormControl} from '@angular/forms';
 })
 
 export class FlightListComponent implements OnInit {
-  displayedColumns: string[] = ['index', 'source', 'Destination', 'Time', 'Price', 'Org', 'op'];
+  displayedColumns: string[] = ['source', 'Destination', 'Time', 'Price', 'Org', 'op'];
   dataSource: MatTableDataSource<Flight>;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   flights: Flight[];
   countries: Country[];
@@ -41,7 +40,6 @@ export class FlightListComponent implements OnInit {
     f1.Price = 54545;
     this.flights.push(f1);
     this.dataSource = new MatTableDataSource(this.flights);
-    this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
   applyFilter(filterValue: string) {

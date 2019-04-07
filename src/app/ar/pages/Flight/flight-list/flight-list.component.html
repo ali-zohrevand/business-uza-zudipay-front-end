@@ -5,7 +5,7 @@
     <div class="row h-100 align-items-end">
       <div class="col-12">
         <div class="breadcumb--con">
-          <h2 style="text-align: right" class="title">Blog Single</h2>
+          <h2 style="text-align: right" class="title">لیست پرواز</h2>
           <nav aria-label="breadcrumb" style="float: right">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
@@ -30,7 +30,7 @@
     <div class="row">
       <div class="col-12">
         <div class="row" dir="rtl">
-          <div class="col-3">
+          <div class="col-sm-3">
             <mat-form-field>
               <mat-label>مبدا</mat-label>
               <mat-select [(ngModel)]="sourceCity" >
@@ -44,7 +44,7 @@
             </mat-form-field>
 
           </div>
-          <div class="col-3">
+          <div class="col-sm-3">
             <mat-form-field>
               <mat-label>مقصد</mat-label>
               <mat-select [(ngModel)]="distCity" >
@@ -58,7 +58,7 @@
             </mat-form-field>
 
           </div>
-          <div class="col-3">
+          <div class="col-sm-3">
             <mat-form-field>
               <input matInput [matDatepicker]="dp3" placeholder="انتخاب تاریخ" disabled>
               <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
@@ -66,7 +66,7 @@
             </mat-form-field>
 
           </div>
-          <div class="col-3">
+          <div class="col-sm-3">
             <mat-form-field dir="rtl">
               <input matInput (keyup)="applyFilter($event.target.value)" placeholder="جست و جو">
             </mat-form-field>
@@ -75,53 +75,70 @@
         <div >
 
 
-          <div class="mat-elevation-z8" dir="rtl" style="text-align: right">
-            <table mat-table [dataSource]="dataSource" matSort >
-              <ng-container matColumnDef="index">
-                <th mat-header-cell *matHeaderCellDef> # </th>
-                <td mat-cell *matCellDef="let i = index"> {{i +1}} </td>
-              </ng-container>
+          <div class="example-container mat-elevation-z8" dir="rtl" style="text-align: right">
+            <mat-table [dataSource]="dataSource" matSort #table  [class.isMobile]="isMobile">
+              <!--<ng-container matColumnDef="index">
+                <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
+                <mat-cell *matCellDef="let i = index">
+                  <span class="mobile-label">شماره:</span>
+                  {{i +1}} </mat-cell>
+              </ng-container>-->
               <!-- ID Column -->
               <ng-container matColumnDef="source">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> مبدا </th>
-                <td mat-cell *matCellDef="let row"> {{row.Source}} </td>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> مبدا </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                  <span class="mobile-label">مبدا:</span>
+                  {{row.Source}} </mat-cell>
               </ng-container>
 
               <!-- Progress Column -->
               <ng-container matColumnDef="Destination">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> مقصد </th>
-                <td mat-cell *matCellDef="let row"> {{row.Destination }} </td>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> مقصد </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                  <span class="mobile-label">مقصد:</span>
+
+                  {{row.Destination }} </mat-cell>
               </ng-container>
 
               <!-- Name Column -->
               <ng-container matColumnDef="Time">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> زمان </th>
-                <td mat-cell *matCellDef="let row"> {{row.Time}} </td>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> زمان </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                  <span class="mobile-label">زمان:</span>
+
+                  {{row.Time}} </mat-cell>
               </ng-container>
 
               <!-- Color Column -->
               <ng-container matColumnDef="Price">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> هزینه </th>
-                <td mat-cell *matCellDef="let row" > {{row.Price}} </td>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> هزینه </mat-header-cell>
+                <mat-cell *matCellDef="let row" >
+                  <span class="mobile-label">هزینه:</span>
+
+                  {{row.Price}} </mat-cell>
               </ng-container>
               <ng-container matColumnDef="Org">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> شرکت هواپیمایی </th>
-                <td mat-cell *matCellDef="let row" > {{row.Org}} </td>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> شرکت هواپیمایی </mat-header-cell>
+                <mat-cell *matCellDef="let row" >
+                  <span class="mobile-label">شرکت هواپیمایی :</span>
+
+                  {{row.Org}} </mat-cell>
               </ng-container>
               <ng-container matColumnDef="op">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> عملیات </th>
-                <td mat-cell *matCellDef="let row" >
-                  <div class="btn-group  btn-group-sm">
-                    <a mat-button class="btn btn-primary" type="button">انتخاب</a>
-                  </div>
-                </td>
-              </ng-container>
-              <tr mat-header-row style="color: #0D3349" *matHeaderRowDef="displayedColumns"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-              </tr>
-            </table>
+                <mat-header-cell *matHeaderCellDef mat-sort-header> عملیات </mat-header-cell>
+                <mat-cell *matCellDef="let row" >
+                  <span class="mobile-label">عملیات:</span>
 
-            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+                  <div class="btn-group  btn-group-sm">
+                    <a mat-button class="btn btn-success" type="button">انتخاب</a>
+                  </div>
+                </mat-cell>
+              </ng-container>
+              <mat-header-row style="color: #0D3349" *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;">
+              </mat-row>
+            </mat-table>
+
           </div>
 
         </div>
