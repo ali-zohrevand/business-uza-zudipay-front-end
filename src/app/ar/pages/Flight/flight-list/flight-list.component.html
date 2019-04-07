@@ -1,0 +1,149 @@
+
+<!-- ***** Breadcrumb Area Start ***** -->
+<div class="breadcrumb-area">
+  <div class="container h-100">
+    <div class="row h-100 align-items-end">
+      <div class="col-12">
+        <div class="breadcumb--con">
+          <h2 style="text-align: right" class="title">لیست پرواز</h2>
+          <nav aria-label="breadcrumb" style="float: right">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Flight</a></li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Curve -->
+  <div class="breadcrumb-bg-curve" >
+    <img src="../../../../../assets/img/core-img/curve-5.png" alt="">
+  </div>
+</div>
+<!-- ***** Breadcrumb Area End ***** -->
+
+<!-- ***** Blog Details Area Start ***** -->
+<section class="blog-details-area section-padding-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="row" dir="rtl">
+          <div class="col-sm-3">
+            <mat-form-field>
+              <mat-label>مبدا</mat-label>
+              <mat-select [(ngModel)]="sourceCity" >
+                <mat-option>-- None --</mat-option>
+                <mat-optgroup *ngFor="let country of countries" [label]="country.viewValue">
+                  <mat-option *ngFor="let  city of country.cities" [value]="city.name">
+                    {{city.viewValue}}
+                  </mat-option>
+                </mat-optgroup>
+              </mat-select>
+            </mat-form-field>
+
+          </div>
+          <div class="col-sm-3">
+            <mat-form-field>
+              <mat-label>مقصد</mat-label>
+              <mat-select [(ngModel)]="distCity" >
+                <mat-option>-- None --</mat-option>
+                <mat-optgroup *ngFor="let country of countries" [label]="country.viewValue">
+                  <mat-option *ngFor="let  city of country.cities" [value]="city.name">
+                    {{city.viewValue}}
+                  </mat-option>
+                </mat-optgroup>
+              </mat-select>
+            </mat-form-field>
+
+          </div>
+          <div class="col-sm-3">
+            <mat-form-field>
+              <input matInput [matDatepicker]="dp3" placeholder="انتخاب تاریخ" disabled>
+              <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+              <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+            </mat-form-field>
+
+          </div>
+          <div class="col-sm-3">
+            <mat-form-field dir="rtl">
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="جست و جو">
+            </mat-form-field>
+          </div>
+          </div>
+        <div >
+
+
+          <div class="example-container mat-elevation-z8" dir="rtl" style="text-align: right">
+            <mat-table [dataSource]="dataSource" matSort #table  [class.isMobile]="isMobile">
+              <!--<ng-container matColumnDef="index">
+                <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
+                <mat-cell *matCellDef="let i = index">
+                  <span class="mobile-label">شماره:</span>
+                  {{i +1}} </mat-cell>
+              </ng-container>-->
+              <!-- ID Column -->
+              <ng-container matColumnDef="source">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> مبدا </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                  <span class="mobile-label">مبدا:</span>
+                  {{row.Source}} </mat-cell>
+              </ng-container>
+
+              <!-- Progress Column -->
+              <ng-container matColumnDef="Destination">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> مقصد </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                  <span class="mobile-label">مقصد:</span>
+
+                  {{row.Destination }} </mat-cell>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="Time">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> زمان </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                  <span class="mobile-label">زمان:</span>
+
+                  {{row.Time}} </mat-cell>
+              </ng-container>
+
+              <!-- Color Column -->
+              <ng-container matColumnDef="Price">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> هزینه </mat-header-cell>
+                <mat-cell *matCellDef="let row" >
+                  <span class="mobile-label">هزینه:</span>
+
+                  {{row.Price}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="Org">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> شرکت هواپیمایی </mat-header-cell>
+                <mat-cell *matCellDef="let row" >
+                  <span class="mobile-label">شرکت هواپیمایی :</span>
+
+                  {{row.Org}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="op">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> عملیات </mat-header-cell>
+                <mat-cell *matCellDef="let row" >
+                  <span class="mobile-label">عملیات:</span>
+
+                  <div class="btn-group  btn-group-sm">
+                    <a mat-button class="btn btn-success" type="button">انتخاب</a>
+                  </div>
+                </mat-cell>
+              </ng-container>
+              <mat-header-row style="color: #0D3349" *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;">
+              </mat-row>
+            </mat-table>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
