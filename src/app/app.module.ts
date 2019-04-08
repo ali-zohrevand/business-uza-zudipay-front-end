@@ -12,16 +12,18 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {
-  MatDatepickerModule,
-  MatFormFieldModule, MatInputModule, MatNativeDateModule,
+  MatButtonModule,
+  MatCardModule,
+  MatDatepickerModule, MatDialogModule,
+  MatFormFieldModule, MatIconModule, MatInputModule, MatMenuModule, MatNativeDateModule,
   MatPaginator,
-  MatPaginatorModule, MatSelectModule,
+  MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule,
   MatSort, MatSortModule,
   MatTableDataSource,
-  MatTableModule
+  MatTableModule, MatToolbarModule
 } from '@angular/material';
 import {AppRoutes} from './app-routes';
-import { LoginComponentComponent } from './ar/login-component/login-component.component';
+import { LoginComponentComponent } from './panel/login-component/login-component.component';
 import { ArabicMainComponent } from './ar/arabic-main/arabic-main.component';
 import { ContactUsComponent } from './ar/pages/contact-us/contact-us.component';
 import { IndexPageComponent } from './ar/pages/index-page/index-page.component';
@@ -64,6 +66,18 @@ import { ExhangeRequestComponent } from './ar/pages/Exhange/exhange-request/exha
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatTableModule,
+    MatIconModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    MatDialogModule,
+    MatTableModule,
+    MatMenuModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
     MatSelectModule,
     MatDatepickerModule,        // <----- import(must)
     MatNativeDateModule,        // <----- import for date formating(optional)
