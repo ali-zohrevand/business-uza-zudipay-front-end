@@ -14,10 +14,10 @@ import {ExchangeListComponent} from "./ar/pages/Exhange/exhnage-list/exchange-li
 
 const routes: Routes = [
   {path: '', redirectTo: '/ar', pathMatch: 'full'},
-  {path: 'login', component: LoginComponentComponent},
   {path: 'ar', component: ArabicMainComponent , children:
   [
     {path: '', component : IndexPageComponent},
+    {path: 'login', component: LoginComponentComponent},
     {path: 'contact', component: ContactUsComponent},
     {path: 'about', component: AboutUsComponent  },
     {path: 'flight', component: FlightRouteComponent, children: [
